@@ -23,5 +23,5 @@ A tiny web application to generate <x> passwords of <y> length.
 			
 				$ spec -f specdoc main_spec.rb
 
-- **Author**: [Kevin Laborda](http://www.darkrevival.org)
+- **Author**: [Kevin Laborda](http://www.darkrevival.com)
 - **Licence**: [Creative Commons](http://creativecommons.org/licenses/by/3.0/us/)
