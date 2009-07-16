@@ -8,7 +8,7 @@ get '/' do
   erb :new
 end
 
-# create
+# generate pw
 post '/' do
 	num = params[:pwnum].to_i
 	len = params[:pwlen].to_i
@@ -20,10 +20,10 @@ post '/' do
   end
 end
 
-# show
-get '/:num/:len/' do
-	num = params[:num].to_i ||= 1
-	len = params[:len].to_i ||= 8
+# show /number-[d]/length-[d]/
+get %r{/number-(\d+)/length-(\d+)/}  do
+	num = params[:captures][0].to_i
+	len = params[:captures][1].to_i
   @pwlist = PWDGen.new(num, len)
   if @pwlist
     erb :show
