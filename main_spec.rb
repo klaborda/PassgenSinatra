@@ -33,8 +33,17 @@ end
 describe "PassgenSinatra" do
 	include Rack::Test::Methods
   
+	# Home page is "something"
 	it "has home page" do
 		get '/'
+		last_response.should be_ok
+		last_response.body.length.should > 0
+	end
+
+	# Worthless test.  Doesn't check for validitity of passwords.
+	# However, knowledge of Rspec/Sinatra is limited... so w/e
+	it "accepts number and length params for password generation" do
+		get '/2/6/'
 		last_response.should be_ok
 		last_response.body.length.should > 0
 	end
